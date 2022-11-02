@@ -133,8 +133,12 @@ var keystone_default = withAuth(
     session,
     server: {
       healthCheck: {
-        path: "/my-health-check",
-        data: { status: "healthy" }
+        path: "/healthcheck",
+        data: () => ({
+          status: "healthy",
+          timestamp: Date.now(),
+          uptime: process.uptime()
+        })
       }
     }
   })

@@ -28,7 +28,11 @@ export default withAuth(
         server: {
     healthCheck: {
       path: '/healthcheck',
-      data: { status: 'healthy' },
+      data: () => ({
+        status: 'healthy',
+        timestamp: Date.now(),
+        uptime: process.uptime(),
+      }),
     },
   },
   })
