@@ -27,7 +27,7 @@ export default withAuth(
     session,
         server: {
     healthCheck: {
-      path: '/my-health-check',
+      path: '/healthcheck',
       data: { status: 'healthy' },
     },
   },
