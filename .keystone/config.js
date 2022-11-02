@@ -130,16 +130,6 @@ var keystone_default = withAuth(
       url: "file:./keystone.db"
     },
     lists,
-    session,
-    server: {
-      healthCheck: {
-        path: "/healthcheck",
-        data: () => ({
-          status: "healthy",
-          timestamp: Date.now(),
-          uptime: process.uptime()
-        })
-      }
-    }
+    session
   })
 );
