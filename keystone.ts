@@ -25,5 +25,11 @@ export default withAuth(
     },
     lists,
     session,
+        server: {
+    healthCheck: {
+      path: '/my-health-check',
+      data: { status: 'healthy' },
+    },
+  },
   })
 );
